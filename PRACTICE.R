@@ -281,30 +281,6 @@ who3 <- who2 %>% separate(sexage, into = c("sex", "age"), sep = 1)
 # Write a code to drop “iso2”, “iso3”, and “new” columns. Please show me that you have tidy data now
 who4 <- who3 %>% select(-iso2, -iso3, -new)
 
-
-reading <- read.csv("C:/Users/이길남/Desktop/DATASET/[2024.04.19] 2002-2021Y 종이책전자책 성인 독서량.csv")
-reading2 <- select(reading, SC2, 시점, '독서자.평균')
-result <- reading %>%
-  filter(SC2 == "남성") %>%
-  mutate(Gender = "남성") %>%
-  select(Gender, 시점, '독서자.평균')
-# 시점(시간) 열을 반올림하여 새로운 변수를 만듭니다.
-result$rounded_time <- round(result$시점, digits = 1)
-# ggplot을 사용하여 반올림된 시점을 이용하여 그래프를 그립니다.
-ggplot(data = result) +
-  geom_bar(mapping = aes(x = rounded_time, y = `독서자.평균`), stat = "identity")
-
-reading <- read.csv("C:/Users/이길남/Desktop/DATASET/[2024.04.19] 2002-2023Y 13세 이상 인구 독서량.csv")
-reading1 <- reading %>%
-  pivot_longer(cols = X2009:X2023, names_to = "key", values_to = "cases", values_drop_na = TRUE)
-
-
-selected_rows <- filter(reading1, 특성별.1. == "전체")
-
-
-ggplot(data = selected_rows) +
-  geom_point(mapping = aes(y = 'cases'), stat = "identity")
-
 ## RESHAPE2 PAKAGE ##
 # 데이터 구조를 변환하는 패키지
 install.packages("reshape2")
