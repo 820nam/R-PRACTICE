@@ -13,7 +13,6 @@ max(sample(20))             # 무작위 값 중 최대값
 ### mpg 데이터셋 분석 및 시각화
 library(ggplot2)
 library(esquisse)
-  
 ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point(aes(color = class))  # 클래스별 색상
 ggplot(data = mpg) + geom_point(aes(x = displ, y = hwy, size = class))  # 클래스별 크기 지정
 ggplot(data = mpg) + geom_point(aes(x = displ, y = hwy, alpha = class)) # 투명도 조정
