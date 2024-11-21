@@ -6,7 +6,7 @@
 2. ggplot2 시각화
 산점도(geom_point), 패싯(facet_wrap), 극좌표(coord_polar) 등 다양한 시각화.
 
-3. dplyr 데이터 처리
+3. dplyr 데이터 처리1
 필터(filter), 정렬(arrange), 요약(summarise), 변수 생성(mutate) 등 데이터 핸들링.
 
 4. tidyr 데이터 정리
